@@ -1,0 +1,13 @@
+- name: "register the LDM host"
+  command: >
+    ./bin/regutil -s {{ ldm_host }} /hostname
+    chdir={{ ldm_home }}
+  sudo_user: ldm
+
+- name: 'copy ldmd.conf'
+  template: src=ldmd.conf.j2 dest={{ ldm_home }}/etc
+  sudo_user: ldm
+
+- name: 'copy pqact.conf'
+  template: src=pqact.conf.j2 dest={{ ldm_home }}/etc
+  sudo_user: ldm

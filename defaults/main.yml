@@ -1,0 +1,13 @@
+ldm_user: ldm
+ldm_home: /opt/ldm
+
+ldm_host: localhost
+
+ldm_version: '6.12.3'
+
+ldm_required_packages:
+  - build-essential
+  - pax
+  - libxml2-dev
+  - zlib1g-dev
+  - expect

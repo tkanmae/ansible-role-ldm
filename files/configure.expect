@@ -1,0 +1,17 @@
+#!/usr/bin/env expect
+
+spawn ./configure
+
+expect "Password:"
+send "\n"
+
+expect -re "password for .+:"
+send "\n"
+
+expect -re "password for .+:"
+send "\n"
+
+expect -re "password for .+:"
+send "\n"
+
+expect eof

@@ -1,0 +1,36 @@
+- name: 'fetch the LDM source'
+  get_url: >
+    url="ftp://ftp.unidata.ucar.edu/pub/ldm/ldm-{{ ldm_version }}.tar.gz"
+    dest={{ ldm_home }}
+  sudo_user: ldm
+
+- name: 'unpack the LDM source'
+  shell: >
+    gunzip -c ldm-{{ ldm_version }}.tar.gz | pax -r '-s:/:/src/:' &&
+    rm ldm-{{ ldm_version }}.tar.gz
+    chdir={{ ldm_home }}
+  sudo_user: ldm
+
+- name: 'copy an expect script'
+  copy: src=configure.expect
+        dest={{ ldm_home }}/ldm-{{ ldm_version }}/src/configure.expect
+        mode=0775
+  sudo_user: ldm
+
+- name: 'run a configure script via the expect script'
+  command: >
+    ./configure.expect
+    chdir={{ ldm_home }}/ldm-{{ ldm_version }}/src
+  sudo_user: ldm
+
+- name: 'make install && make clean'
+  shell: >
+    make install && make clean
+    chdir={{ ldm_home }}/ldm-{{ ldm_version }}/src
+  sudo_user: ldm
+
+- name: 'make root-actions'
+  command: >
+    make root-actions
+    chdir={{ ldm_home }}/ldm-{{ ldm_version }}/src
+
