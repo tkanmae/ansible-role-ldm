@@ -22,3 +22,8 @@ also works on other Debian-based distribution.
 * `ldm_home`: sets the home directory of the LDM user (default: /opt/ldm)
 * `ldm_host`: (default: localhost)
 * `ldm_version`: sets the LDM version (default: "6.12.3")
+
+
+## Development
+
+To perform a syntax check, run a helper script: `./test.sh`.
