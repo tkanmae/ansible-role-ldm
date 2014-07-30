@@ -1,13 +1,21 @@
+# LDM user
 ldm_user: ldm
+# Home directory of the LDM user
 ldm_home: /opt/ldm
+# Fully-qualified name of the host where the LDM is installed.  The default
+# value is just a placeholder.  **You must provide the fully-qualified name
+# of the LDM host.**
 ldm_host: localhost
-
+# LDM version number
 ldm_version: '6.12.3'
-
-ldm_log_count: 7
-ldm_log_file: "{{ ldm_home }}/var/logs/ldmd.log"
+# Port to which the LDM listens for incoming connections
 ldm_port: 388
+# The number of log files to be kept around
+ldm_log_count: 7
+# LDM log file
+ldm_log_file: "{{ ldm_home }}/var/logs/ldmd.log"
 
+# Required packages
 ldm_required_packages:
   - build-essential
   - pax
