@@ -31,7 +31,7 @@ ldm_home: /opt/ldm
 # Fully-qualified name of the host where the LDM is installed.  The default
 # value is just a placeholder.  **You must provide the fully-qualified name
 # of the LDM host.**
-ldm_host: localhost
+ldm_host: your.ldm.host.fqdn
 # LDM version number
 ldm_version: '6.12.3'
 # Port to which the LDM listens for incoming connections
