@@ -5,23 +5,44 @@ Ansible role that installs and configures [the Unidata Local Data Manager (LDM)
 system](http://www.unidata.ucar.edu/software/ldm/).
 
 
-## Requirements and Dependencies
+## Requirements
 
-This role was tested with Ansible 1.6.
+This role has been tested with Ansible 1.6.
 
 
 ### Platforms
 
-This role was developed and was only tested on Ubuntu.  I assume that this role
-also works on other Debian-based distribution.
+This role has been developed and tested on Ubuntu; therefore, the role likely
+work on other Debian-based distributions as well.
 
 
 ## Variables
 
-* `ldm_user`: sets the LDM user (default: ldm)
-* `ldm_home`: sets the home directory of the LDM user (default: /opt/ldm)
-* `ldm_host`: (default: localhost)
-* `ldm_version`: sets the LDM version (default: "6.12.3")
+This role sets reasonable default values for the variables below except for
+`host_name` that specifies the fully-qualified name of the host where the LDM
+is installed.  You must provide the fully-qualified name of the LDM host in
+`host_name`.
+
+```yaml
+# LDM user
+ldm_user: ldm
+# Home directory of the LDM user
+ldm_home: /opt/ldm
+# Fully-qualified name of the host where the LDM is installed.  The default
+# value is just a placeholder.  **You must provide the fully-qualified name
+# of the LDM host.**
+ldm_host: localhost
+# LDM version number
+ldm_version: '6.12.3'
+# Required packages
+ldm_required_packages:
+  - build-essential
+  - pax
+  - libxml2-dev
+  - zlib1g-dev
+  - expect
+
+```
 
 
 ## Development
