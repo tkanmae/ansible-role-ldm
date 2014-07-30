@@ -18,10 +18,10 @@ work on other Debian-based distributions as well.
 
 ## Variables
 
-This role sets reasonable default values for the variables below except for
-`host_name` that specifies the fully-qualified name of the host where the LDM
-is installed.  You must provide the fully-qualified name of the LDM host in
-`host_name`.
+This role defines variables below and sets reasonable default values for them.
+The exception is a variable `host_name` that specifies the fully-qualified name
+of the host where the LDM is installed.  You must provide the fully-qualified
+name of the LDM host in `host_name`.
 
 ```yaml
 # LDM user
@@ -38,7 +38,7 @@ ldm_version: '6.12.3'
 ldm_port: 388
 # LDM log file
 ldm_log_file: "{{ ldm_home }}/var/logs/ldmd.log"
-# The number of log files to be kept around.
+# The number of log files to be kept around
 ldm_log_counts: 7
 ```
 
