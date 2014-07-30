@@ -1,7 +1,3 @@
-- name: 'ensure the required packages are installed'
-  apt: pkg={{ item }} state=latest
-  with_items: ldm_required_packages
-
 - name: 'ensure the ldm user is present'
   user: >
     name={{ ldm_user }}

@@ -1,3 +1,7 @@
+- name: 'ensure the required packages are installed'
+  apt: pkg={{ item }} state=latest
+  with_items: ldm_required_packages
+
 - name: 'fetch the LDM source'
   get_url: >
     url="ftp://ftp.unidata.ucar.edu/pub/ldm/ldm-{{ ldm_version }}.tar.gz"
