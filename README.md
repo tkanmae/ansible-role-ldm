@@ -34,14 +34,12 @@ ldm_home: /opt/ldm
 ldm_host: localhost
 # LDM version number
 ldm_version: '6.12.3'
-# Required packages
-ldm_required_packages:
-  - build-essential
-  - pax
-  - libxml2-dev
-  - zlib1g-dev
-  - expect
-
+# Port to which the LDM listens for incoming connections
+ldm_port: 388
+# LDM log file
+ldm_log_file: {{ ldm_home }}/var/logs/ldmd.log
+# The number of log files to be kept around.
+ldm_log_counts: 7
 ```
 
 
