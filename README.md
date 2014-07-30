@@ -37,7 +37,7 @@ ldm_version: '6.12.3'
 # Port to which the LDM listens for incoming connections
 ldm_port: 388
 # LDM log file
-ldm_log_file: {{ ldm_home }}/var/logs/ldmd.log
+ldm_log_file: "{{ ldm_home }}/var/logs/ldmd.log"
 # The number of log files to be kept around.
 ldm_log_counts: 7
 ```

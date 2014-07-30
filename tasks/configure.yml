@@ -1,8 +1,17 @@
-- name: "register the LDM host"
+- name: 'update the LDM registry'
   command: >
-    ./bin/regutil -s {{ ldm_host }} /hostname
+    ./bin/regutil -s {{ item.val }} {{ item.key }}
     chdir={{ ldm_home }}
   sudo_user: ldm
+  with_items:
+    - key: /hostname
+      val: "{{ ldm_host }}}"
+    - key: /server/port
+      val: "{{ ldm_port }}"
+    - key: /log/file,
+      val: "{{ ldm_log_file }}"
+    - key: /log/counts
+      val: "{{ ldm_log_counts }}"
 
 - name: 'copy ldmd.conf'
   template: src=ldmd.conf.j2 dest={{ ldm_home }}/etc

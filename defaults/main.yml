@@ -1,9 +1,12 @@
 ldm_user: ldm
 ldm_home: /opt/ldm
-
 ldm_host: localhost
 
 ldm_version: '6.12.3'
+
+ldm_log_count: 7
+ldm_log_file: "{{ ldm_home }}/var/logs/ldmd.log"
+ldm_port: 388
 
 ldm_required_packages:
   - build-essential
