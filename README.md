@@ -1,13 +1,19 @@
 LDM
 ===
 
-This role installs and configures [the Unidata Local Data Manager (LDM)
+Ansible role that installs and configures [the Unidata Local Data Manager (LDM)
 system](http://www.unidata.ucar.edu/software/ldm/).
 
 
-## Platforms
+## Requirements and Dependencies
 
-This role was developed and only tested on Ubuntu 14.04.
+This role was tested with Ansible 1.6.
+
+
+### Platforms
+
+This role was developed and was only tested on Ubuntu.  I assume that this role
+also works on other Debian-based distribution.
 
 
 ## Variables
