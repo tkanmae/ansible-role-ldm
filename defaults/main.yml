@@ -14,11 +14,3 @@ ldm_port: 388
 ldm_log_count: 7
 # LDM log file
 ldm_log_file: "{{ ldm_home }}/var/logs/ldmd.log"
-
-# Required packages
-ldm_required_packages:
-  - build-essential
-  - pax
-  - libxml2-dev
-  - zlib1g-dev
-  - expect

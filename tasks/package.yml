@@ -1,6 +1,11 @@
-- name: 'ensure the required packages are installed'
+- name: 'ensure required packages are installed'
   apt: pkg={{ item }} state=latest
-  with_items: ldm_required_packages
+  with_items:
+    - build-essential
+    - pax
+    - libxml2-dev
+    - zlib1g-dev
+    - expect
 
 - name: 'fetch the LDM source'
   get_url: >
