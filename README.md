@@ -28,12 +28,22 @@ name of the LDM host in `host_name`.
 ldm_user: ldm
 # Home directory of the LDM user
 ldm_home: /opt/ldm
+# LDM version number
+ldm_version: '6.12.3'
+
+#
+# Configuration via etc/ldmd.conf
+#
+# Request data-products from upstream LDMs
+ldm_request_entries: []
+
+#
+# Configuration via `regutil` command
+#
 # Fully-qualified name of the host where the LDM is installed.  The default
 # value is just a placeholder.  **You must provide the fully-qualified name
 # of the LDM host.**
 ldm_host: your.ldm.host.fqdn
-# LDM version number
-ldm_version: '6.12.3'
 # Port to which the LDM listens for incoming connections
 ldm_port: 388
 # LDM log file

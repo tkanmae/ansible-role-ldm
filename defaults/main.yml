@@ -8,6 +8,10 @@ ldm_home: /opt/ldm
 ldm_host: your.ldm.host.fqdn
 # LDM version number
 ldm_version: '6.12.3'
+
+# Request data-products from upstream LDMs
+ldm_request_entries: []
+
 # Port to which the LDM listens for incoming connections
 ldm_port: 388
 # The number of log files to be kept around

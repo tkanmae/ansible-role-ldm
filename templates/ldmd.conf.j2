@@ -88,7 +88,9 @@ EXEC	"rtstats -h rtstats.unidata.ucar.edu"
 #REQUEST WMO ".*" initial-primary-host.some.domain:388
 #REQUEST WMO ".*" initial-secondary-host.another.domain
 #REQUEST WMO ".*" another-secondary-host.yet_another.domain:3152
-REQUEST NLDN ".*" striker2.atmos.albany.edu
+{% for item for ldm_request_entries %}
+REQUEST {{ item.feedset }} "{{ item.pattern }}" {{ item.host }}
+{% end %}
 #
 ###############################################################################
 # Allow Entries
