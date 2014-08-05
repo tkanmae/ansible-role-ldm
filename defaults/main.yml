@@ -2,19 +2,33 @@
 ldm_user: ldm
 # Home directory of the LDM user
 ldm_home: /opt/ldm
-# Fully-qualified name of the host where the LDM is installed.  The default
-# value is just a placeholder.  **You must provide the fully-qualified name
-# of the LDM host.**
-ldm_host: your.ldm.host.fqdn
 # LDM version number
 ldm_version: '6.12.3'
 
-# Request data-products from upstream LDMs
-ldm_request_entries: []
 
+#
+# regutil command
+#
+
+# Fully-qualified name of the host where the LDM is installed.  The default
+# value is just a placeholder.  **You must provide the fully-qualified name
+# of the LDM host.**
+ldm_host: your.ldm.host.name
 # Port to which the LDM listens for incoming connections
 ldm_port: 388
 # The number of log files to be kept around
 ldm_log_count: 7
 # LDM log file
 ldm_log_file: "{{ ldm_home }}/var/logs/ldmd.log"
+
+
+#
+# ldmd.conf
+#
+
+# Request data-products from upstream LDMs. Each request is a hash with three
+# items: `feedset`, a union of feedtypes to request; `pattern`, an extended
+# regular expression for the data product identifiers to match; `host`, a host
+# identifier: either a host name or IP adress in "dotted-quad" format. The port
+# can be appended after a colon.
+ldm_request_entries: []
