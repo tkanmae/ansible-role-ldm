@@ -17,7 +17,7 @@ ldm_host: your.ldm.host.name
 # Port to which the LDM listens for incoming connections
 ldm_port: 388
 # The number of log files to be kept around
-ldm_log_count: 7
+ldm_log_counts: 7
 # LDM log file
 ldm_log_file: "{{ ldm_home }}/var/logs/ldmd.log"
 
