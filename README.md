@@ -67,6 +67,15 @@ The following variables are used to compose entries in ldmd.conf.
   expression for the data product identifiers to match; `host`, a host
   identifier: either a host name or IP address in "dotted-quad" format.
   Optionally, the port on an upstream host can be appended after a colon.
+* `ldm_allow_entries`: Give permission to downstream LDMs. Each entry is a hash
+  with two required and two optional items.  `feedset` is a set of feed types
+  to request.  `host_pattern` is an extended regular expression that specifies
+  what hosts are allowed to receive data products whose feed type is in
+  `feedset`.  `ok_pattern` is an optional extended regular expression that a
+  product identifier must match in order to be sent to the requesting LDM.  The
+  default value is `".*"`.  `no_pattern` is an optional extended
+  regular expression that a product-identifier must NOT match in order to be
+  sent to the requesting LDM.
 
 
 ## Requirements
