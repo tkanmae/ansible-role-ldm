@@ -5,7 +5,7 @@ ldm_home: /opt/ldm
 # LDM version number.  The Unidate does not make all the previous versions
 # publicly available.  You may want to check what versions currently available
 # at ftp://ftp.unidata.ucar.edu/pub/ldm/.
-ldm_version: '6.12.3'
+ldm_version: '6.12.4'
 
 
 #

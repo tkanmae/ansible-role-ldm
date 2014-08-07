@@ -15,7 +15,7 @@ ldm_home: /opt/ldm
 # LDM version number.  The Unidate does not make all the previous versions
 # publicly available.  You may want to check what versions currently available
 # at ftp://ftp.unidata.ucar.edu/pub/ldm/.
-ldm_version: '6.12.3'
+ldm_version: '6.12.4'
 
 # Fully-qualified name of the host where the LDM is installed.  The default
 # value is just a placeholder.  **You must provide the fully-qualified name
@@ -46,7 +46,7 @@ of the LDM host in `host_name`.
 
 * `ldm_user`: LDM user.  The default value is "ldm".
 * `ldm_home`: Home directory of the LDM user.  The default value is "/opt/ldm".
-* `ldm_version`: LDM version number.  The default value is "6.12.3".  The
+* `ldm_version`: LDM version number.  The default value is "6.12.4".  The
   Unidate does not make all the previous versions publicly available.  You
   may want to check what versions currently available at
   [ftp://ftp.unidata.ucar.edu/pub/ldm/](ftp://ftp.unidata.ucar.edu/pub/ldm/).
