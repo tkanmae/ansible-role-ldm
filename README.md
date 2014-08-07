@@ -8,32 +8,22 @@ system](http://www.unidata.ucar.edu/software/ldm/).
 ## Example
 
 ```yaml
-# LDM user
-ldm_user: ldm
-# Home directory of the LDM user
-ldm_home: /opt/ldm
-# LDM version number.  The Unidate does not make all the previous versions
-# publicly available.  You may want to check what versions currently available
-# at ftp://ftp.unidata.ucar.edu/pub/ldm/.
-ldm_version: '6.12.4'
-
-# Fully-qualified name of the host where the LDM is installed.  The default
-# value is just a placeholder.  **You must provide the fully-qualified name
-# of the LDM host.**
-ldm_host: your.ldm.host.name
-
-# Request data-products from upstream LDMs. Each request is a hash with three
-# items: `feedset`, a union of feedtypes to request; `pattern`, an extended
-# regular expression for the data product identifiers to match; `host`, a host
-# identifier: either a host name or IP adress in "dotted-quad" format.
-# Optionally, the port on an upstream host can be appended after a colon.
-ldm_request_entries:
-  - feedset: WMO
-    pattern: '.*'
-    host: primary.host.name
-  - feedset: WMO
-    pattern: '.*'
-    host: secondary.host.name:3152
+- host: all
+  sudo: yes
+  roles:
+    - role: ldm
+      # LDM version number.
+      ldm_version: '6.12.4'
+      # Fully-qualified name of the host where the LDM is installed.
+      ldm_host: your.ldm.host.name
+      # Request data-products from upstream LDMs.
+      ldm_request_entries:
+        - feedset: WMO
+          pattern: '.*'
+          host: primary.host.name
+        - feedset: WMO
+          pattern: '.*'
+          host: secondary.host.name:3152
 ```
 
 
