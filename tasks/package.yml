@@ -10,13 +10,12 @@
 - name: 'fetch the LDM source'
   get_url: >
     url="ftp://ftp.unidata.ucar.edu/pub/ldm/ldm-{{ ldm_version }}.tar.gz"
-    dest={{ ldm_home }}
+    dest=/tmp/ldm-{{ ldm_version }}.tar.gz
   sudo_user: ldm
 
 - name: 'unpack the LDM source'
   shell: >
-    gunzip -c ldm-{{ ldm_version }}.tar.gz | pax -r '-s:/:/src/:' &&
-    rm ldm-{{ ldm_version }}.tar.gz
+    gunzip -c /tmp/ldm-{{ ldm_version }}.tar.gz | pax -r '-s:/:/src/:'
     chdir={{ ldm_home }}
   sudo_user: ldm
 
@@ -42,4 +41,3 @@
   command: >
     make root-actions
     chdir={{ ldm_home }}/ldm-{{ ldm_version }}/src
-
