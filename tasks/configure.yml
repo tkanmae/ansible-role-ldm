@@ -14,9 +14,13 @@
       val: "{{ ldm_log_counts }}"
 
 - name: 'copy ldmd.conf'
-  template: src=ldmd.conf.j2 dest={{ ldm_home }}/etc
+  template: >
+    src=ldmd.conf.j2
+    dest={{ ldm_home }}/etc/ldmd.conf
   sudo_user: ldm
 
 - name: 'copy pqact.conf'
-  template: src=pqact.conf.j2 dest={{ ldm_home }}/etc
+  template: >
+    src=pqact.conf.j2
+    dest={{ ldm_home }}/etc/pqpact.conf
   sudo_user: ldm
