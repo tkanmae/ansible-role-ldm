@@ -2,7 +2,9 @@
 ldm_user: ldm
 # Home directory of the LDM user
 ldm_home: /opt/ldm
-# LDM version number
+# LDM version number.  The Unidate does not make all the previous versions
+# publicly available.  You may want to check what versions currently available
+# at ftp://ftp.unidata.ucar.edu/pub/ldm/.
 ldm_version: '6.12.3'
 
 

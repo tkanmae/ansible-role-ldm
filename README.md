@@ -12,7 +12,9 @@ system](http://www.unidata.ucar.edu/software/ldm/).
 ldm_user: ldm
 # Home directory of the LDM user
 ldm_home: /opt/ldm
-# LDM version number
+# LDM version number.  The Unidate does not make all the previous versions
+# publicly available.  You may want to check what versions currently available
+# at ftp://ftp.unidata.ucar.edu/pub/ldm/.
 ldm_version: '6.12.3'
 
 # Fully-qualified name of the host where the LDM is installed.  The default
@@ -44,7 +46,10 @@ of the LDM host in `host_name`.
 
 * `ldm_user`: LDM user.  The default value is "ldm".
 * `ldm_home`: Home directory of the LDM user.  The default value is "/opt/ldm".
-* `ldm_version`: LDM version number.  The default value is "6.12.3".
+* `ldm_version`: LDM version number.  The default value is "6.12.3".  The
+  Unidate does not make all the previous versions publicly available.  You
+  may want to check what versions currently available at
+  [ftp://ftp.unidata.ucar.edu/pub/ldm/](ftp://ftp.unidata.ucar.edu/pub/ldm/).
 
 The following variables provide options that are configured with `regutil`
 command.
