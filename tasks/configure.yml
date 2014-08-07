@@ -1,4 +1,4 @@
-- name: 'update the LDM registry'
+- name: 'update the LDM registry (1)'
   command: >
     ./bin/regutil -s {{ item.val }} {{ item.key }}
     chdir={{ ldm_home }}
@@ -6,10 +6,17 @@
   with_items:
     - key: /hostname
       val: "{{ ldm_host }}}"
+    - key: /log/file
+      val: "{{ ldm_log_file }}"
+
+- name: 'update the LDM registry (2)'
+  command: >
+    ./bin/regutil -u {{ item.val }} {{ item.key }}
+    chdir={{ ldm_home }}
+  sudo_user: ldm
+  with_items:
     - key: /server/port
       val: "{{ ldm_port }}"
-    - key: /log/file,
-      val: "{{ ldm_log_file }}"
     - key: /log/counts
       val: "{{ ldm_log_counts }}"
 
