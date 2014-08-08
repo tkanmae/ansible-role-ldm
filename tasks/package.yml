@@ -41,3 +41,12 @@
   command: >
     make root-actions
     chdir={{ ldm_home }}/ldm-{{ ldm_version }}/src
+
+- name: 'copy an init script'
+  template: >
+    src=ldmd.j2
+    dest=/etc/init.d/ldmd
+    owner=root group=root mode=0755
+
+- name: 'have ldmd start at system startup'
+  service: name=ldmd enabled=yes

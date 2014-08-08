@@ -20,14 +20,19 @@
     - key: /log/counts
       val: "{{ ldm_log_counts }}"
 
+- name: 'start ldmd'
+  service: name=ldmd state=started
+
 - name: 'copy ldmd.conf'
   template: >
     src=ldmd.conf.j2
     dest={{ ldm_home }}/etc/ldmd.conf
   sudo_user: ldm
+  notify: 'restart ldmd'
 
 - name: 'copy pqact.conf'
   template: >
     src=pqact.conf.j2
     dest={{ ldm_home }}/etc/pqpact.conf
   sudo_user: ldm
+  notify: 'restart ldmd'
