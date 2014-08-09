@@ -4,8 +4,6 @@
     chdir={{ ldm_home }}
   sudo_user: ldm
   with_items:
-    - key: /hostname
-      val: "{{ ldm_host }}}"
     - key: /log/file
       val: "{{ ldm_log_file }}"
 
@@ -19,9 +17,6 @@
       val: "{{ ldm_port }}"
     - key: /log/counts
       val: "{{ ldm_log_counts }}"
-
-- name: 'start ldmd'
-  service: name=ldmd state=started
 
 - name: 'copy ldmd.conf'
   template: >

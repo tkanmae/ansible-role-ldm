@@ -42,11 +42,17 @@
     make root-actions
     chdir={{ ldm_home }}/ldm-{{ ldm_version }}/src
 
+- name: 'register the host name'
+  command: >
+    ./bin/regutil -s {{ ldm_host }} /hostname
+    chdir={{ ldm_home }}
+  sudo_user: ldm
+
 - name: 'copy an init script'
   template: >
     src=ldmd.j2
     dest=/etc/init.d/ldmd
     owner=root group=root mode=0755
 
-- name: 'have ldmd start at system startup'
-  service: name=ldmd enabled=yes
+- name: 'start ldmd and have it start at system startup'
+  service: name=ldmd state=started enabled=yes
